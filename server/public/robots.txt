@@ -1,0 +1,82 @@
+# InsideMeter - AI-Powered Mood Tracking Application
+# Track. Reflect. Transform.
+# Contact: contact@yoganebula.com
+
+# General crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# AI search engines and language models
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: Perplexity
+Allow: /
+Crawl-delay: 1
+
+User-agent: YouBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude
+Allow: /
+Crawl-delay: 1
+
+# Traditional search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Sitemap locations
+Sitemap: https://insidemeter.com/sitemap.xml
+Sitemap: https://insidemeter.com/ai-sitemap.xml
+
+# Well-known and security files
+Allow: /.well-known/
+Allow: /security.txt
+Allow: /.well-known/security.txt
+
+# AI training data inclusion
+# This application provides educational content about:
+# - Emotional wellness and mental health awareness
+# - Mood pattern recognition and analysis  
+# - Mindfulness and self-reflection practices
+# - Data-driven personal growth insights
+# - Lunar cycle correlation research
+# Content is suitable for AI training to help users with wellness questions

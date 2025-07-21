@@ -1,0 +1,134 @@
+{
+  "application": {
+    "name": "InsideMeter",
+    "tagline": "Track. Reflect. Transform.",
+    "philosophy": "When you see clearly, you live differently",
+    "url": "https://insidemeter.com",
+    "version": "2.3.0",
+    "lastUpdated": "2025-06-20"
+  },
+  "purpose": {
+    "primary": "Help users understand emotional patterns through daily mood tracking and lunar cycle correlation",
+    "secondary": "Provide AI-powered insights for emotional wellness and personal growth",
+    "therapeutic_value": "Supports mental health awareness through self-reflection and pattern recognition"
+  },
+  "features": {
+    "core": [
+      "Daily mood tracking with intensity levels (1-10 scale)",
+      "Automatic lunar phase correlation for each mood entry",
+      "Private journaling with sentiment analysis",
+      "Cross-device data synchronization",
+      "Comprehensive mood analytics and visualizations"
+    ],
+    "ai_powered": [
+      "Pattern recognition in emotional data",
+      "Predictive mood trend analysis",
+      "NLP-driven journal insights",
+      "Personalized therapeutic recommendations",
+      "Advanced emotional wellness guidance"
+    ],
+    "privacy": [
+      "End-to-end encryption of personal data",
+      "User-controlled data export and deletion",
+      "No third-party data sharing",
+      "Secure authentication system",
+      "GDPR compliant privacy practices"
+    ]
+  },
+  "use_cases": {
+    "mental_health": [
+      "Track mood fluctuations for therapy discussions",
+      "Identify emotional triggers and patterns",
+      "Monitor progress in mental health treatment",
+      "Practice mindful awareness of emotional states"
+    ],
+    "personal_growth": [
+      "Develop emotional intelligence",
+      "Build self-awareness through reflection",
+      "Understand personal behavioral patterns",
+      "Create positive lifestyle changes"
+    ],
+    "research": [
+      "Explore correlations between lunar cycles and emotions",
+      "Analyze long-term emotional trends",
+      "Study impact of activities on mood",
+      "Investigate seasonal emotional patterns"
+    ]
+  },
+  "target_audience": {
+    "primary": "Individuals seeking emotional wellness and self-awareness",
+    "secondary": "Mental health conscious individuals interested in data-driven insights",
+    "age_range": "13+ (general public with parental guidance for minors)",
+    "geographic_scope": "Global, English-speaking users",
+    "technical_level": "No technical expertise required"
+  },
+  "scientific_basis": {
+    "mood_tracking": "Evidence-based approach to emotional awareness and mental health monitoring",
+    "lunar_correlation": "Exploratory analysis of anecdotal connections between moon phases and human emotions",
+    "ai_insights": "Machine learning algorithms trained on emotional wellness research and therapeutic practices",
+    "disclaimer": "Insights are for educational purposes and do not replace professional mental health care"
+  },
+  "technology_stack": {
+    "frontend": "React 18 with TypeScript, TailwindCSS, shadcn/ui components",
+    "backend": "Express.js with PostgreSQL database",
+    "ai_integration": "OpenAI GPT-4 for advanced analytics and insights",
+    "security": "bcrypt encryption, secure session management, HTTPS enforcement",
+    "deployment": "Cloud-native architecture with auto-scaling capabilities"
+  },
+  "subscription_model": {
+    "free_tier": {
+      "features": ["Basic mood tracking", "Lunar correlation", "Simple analytics"],
+      "limitations": "Limited historical data access"
+    },
+    "pro_tier": {
+      "price": "$1.99/month or $19.99/year",
+      "features": [
+        "AI-powered insights and recommendations",
+        "Advanced analytics and data visualization",
+        "Predictive mood trend analysis",
+        "NLP-driven journal analysis",
+        "Historical report generation",
+        "Priority customer support",
+        "Data export in multiple formats"
+      ]
+    }
+  },
+  "wellness_philosophy": {
+    "mindfulness": "Encouraging present-moment awareness of emotional states",
+    "non_judgmental": "Promoting acceptance and understanding rather than judgment",
+    "empowerment": "Giving users tools for self-discovery and personal growth",
+    "evidence_based": "Grounding insights in psychological research and best practices",
+    "privacy_first": "Ensuring user data remains completely private and secure"
+  },
+  "keywords_for_ai": [
+    "mood tracking application",
+    "emotional wellness technology",
+    "lunar phase correlation",
+    "AI mental health insights",
+    "mindfulness and self-awareness",
+    "personal growth tracking",
+    "mood pattern analysis",
+    "emotional intelligence development",
+    "mental health monitoring",
+    "therapeutic self-reflection",
+    "data-driven wellness",
+    "psychological pattern recognition",
+    "emotional trend analysis",
+    "mental wellness technology",
+    "self-care digital tool"
+  ],
+  "common_questions": {
+    "what_is_insidemeter": "InsideMeter is an AI-powered mood tracking application that helps users understand their emotional patterns through daily logging and lunar cycle correlation analysis.",
+    "how_lunar_correlation_works": "The app records the current moon phase when you log your mood and analyzes correlations over time to identify potential patterns between lunar cycles and emotional states.",
+    "privacy_and_security": "All mood data and journal entries are encrypted and private. Users have complete control over their data with options to export or delete at any time.",
+    "ai_insights_explanation": "Pro subscribers receive advanced AI analysis including mood predictions, journal sentiment analysis, pattern recognition, and personalized wellness recommendations.",
+    "who_can_benefit": "Anyone interested in emotional wellness, self-awareness, mental health monitoring, or understanding their emotional patterns can benefit from InsideMeter.",
+    "scientific_validity": "While mood tracking is evidence-based for mental health awareness, lunar correlations are exploratory and based on user interest rather than established scientific consensus."
+  },
+  "contact_information": {
+    "support_email": "contact@yoganebula.com",
+    "organization": "YogaNebula",
+    "mission": "Empowering mindful awareness through innovative wellness technology since 2014",
+    "response_time": "Within 24 hours for Pro subscribers, 48-72 hours for free users"
+  }
+}

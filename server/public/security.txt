@@ -1,0 +1,10 @@
+Contact: contact@yoganebula.com
+Expires: 2025-12-31T23:59:59.000Z
+Acknowledgments: https://insidemeter.com/security
+Preferred-Languages: en
+Canonical: https://insidemeter.com/.well-known/security.txt
+Policy: https://insidemeter.com/privacy
+
+# Inside Meter Security Contact
+# A YogaNebula Initiative
+# Responsible disclosure encouraged
