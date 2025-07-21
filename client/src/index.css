@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* iOS Safe Area Support */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .pt-safe-area-inset-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .pb-safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* iOS-specific styling */
+@media (max-width: 767px) {
+  .ios\:pt-12 {
+    padding-top: 3rem;
+  }
+  .ios\:pt-16 {
+    padding-top: 4rem;
+  }
+  .ios\:pt-18 {
+    padding-top: 4.5rem;
+  }
+  .ios\:pt-20 {
+    padding-top: 5rem;
+  }
+  .ios\:pt-32 {
+    padding-top: 8rem;
+  }
+  .ios\:pt-36 {
+    padding-top: 9rem;
+  }
+  .ios\:pb-6 {
+    padding-bottom: 1.5rem;
+  }
+  .ios\:pb-8 {
+    padding-bottom: 2rem;
+  }
+  .ios\:pb-12 {
+    padding-bottom: 3rem;
+  }
+  .ios\:min-h-\[60px\] {
+    min-height: 60px;
+  }
+  .ios\:text-sm {
+    font-size: 0.875rem;
+  }
+  .ios\:ml-7 {
+    margin-left: 1.75rem;
+  }
+  .ios\:pb-24 {
+    padding-bottom: 6rem;
+  }
+}
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 35%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Lunar theme colors */
+  --space: hsl(225, 64%, 8%);
+  --lunar: hsl(210, 40%, 92%);
+  --moon: hsl(45, 93%, 60%);
+  --mood-purple: hsl(299, 71%, 73%);
+  --mood-blue: hsl(199, 89%, 48%);
+  --lunar-accent: hsl(255, 52%, 67%);
+}
+
+.dark {
+  --background: hsl(225, 64%, 8%);
+  --foreground: hsl(210, 40%, 92%);
+  --muted: hsl(225, 19%, 15%);
+  --muted-foreground: hsl(225, 15%, 75%);
+  --popover: hsl(225, 64%, 8%);
+  --popover-foreground: hsl(210, 40%, 92%);
+  --card: hsl(225, 64%, 8%);
+  --card-foreground: hsl(210, 40%, 92%);
+  --border: hsl(225, 19%, 15%);
+  --input: hsl(225, 19%, 15%);
+  --primary: hsl(255, 52%, 67%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(225, 19%, 15%);
+  --secondary-foreground: hsl(210, 40%, 92%);
+  --accent: hsl(225, 19%, 15%);
+  --accent-foreground: hsl(210, 40%, 92%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(225, 15%, 65%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    background: var(--space);
+    color: var(--lunar);
+  }
+
+  /* Prevent browser autofill and overlay text */
+  input::-webkit-input-placeholder { color: transparent !important; }
+  input:-moz-placeholder { color: transparent !important; }
+  input::-moz-placeholder { color: transparent !important; }
+  input:-ms-input-placeholder { color: transparent !important; }
+  
+  /* Hide Safari autofill */
+  input::-webkit-credentials-auto-fill-button { display: none !important; }
+  input::-webkit-strong-password-auto-fill-button { display: none !important; }
+  
+  /* Prevent webkit text overlay */
+  *::-webkit-input-placeholder { color: transparent !important; }
+  
+  /* Hide any browser-generated overlays */
+  *[data-webkit-password-auto-fill-button] { display: none !important; }
+  
+  /* Additional Safari autofill prevention */
+  nav input { display: none !important; }
+  nav [type="search"] { display: none !important; }
+  nav [type="text"] { display: none !important; }
+  
+  /* Hide any phantom inputs or browser UI */
+  .glassmorphism input:not([data-intentional]) { display: none !important; }
+  .glassmorphism [contenteditable]:not([data-intentional]) { display: none !important; }
+}
+
+@layer components {
+  .glassmorphism {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.1);
+  }
+  
+  .mood-gradient {
+    background: linear-gradient(135deg, var(--mood-purple) 0%, var(--lunar-accent) 50%, var(--mood-blue) 100%);
+  }
+  
+  .moon-glow {
+    box-shadow: 0 0 20px rgba(252, 211, 77, 0.3);
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .moon-phase-new {
+    background: #374151;
+  }
+  
+  .moon-phase-waxing-crescent {
+    background: linear-gradient(90deg, #374151 50%, var(--moon) 50%);
+    clip-path: circle(50% at 75% 50%);
+  }
+  
+  .moon-phase-first-quarter {
+    background: linear-gradient(90deg, #374151 50%, var(--moon) 50%);
+  }
+  
+  .moon-phase-waxing-gibbous {
+    background: linear-gradient(90deg, #374151 20%, var(--moon) 20%);
+  }
+  
+  .moon-phase-full {
+    background: var(--moon);
+  }
+  
+  .moon-phase-waning-gibbous {
+    background: linear-gradient(90deg, var(--moon) 80%, #374151 80%);
+  }
+  
+  .moon-phase-last-quarter {
+    background: linear-gradient(90deg, var(--moon) 50%, #374151 50%);
+  }
+  
+  .moon-phase-waning-crescent {
+    background: linear-gradient(90deg, var(--moon) 50%, #374151 50%);
+    clip-path: circle(50% at 25% 50%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(252, 211, 77, 0.3); 
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(252, 211, 77, 0.6); 
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { 
+    transform: translateY(20px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .grid {
+    gap: 1rem;
+  }
+  
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  .p-4 {
+    padding: 0.75rem;
+  }
+  
+  .text-base {
+    font-size: 0.875rem;
+  }
+  
+  .space-x-6 > * + * {
+    margin-left: 1rem;
+  }
+  
+  .space-x-4 > * + * {
+    margin-left: 0.75rem;
+  }
+}

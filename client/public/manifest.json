@@ -1,0 +1,90 @@
+{
+  "name": "InsideMeter: Track. Reflect. Transform.",
+  "short_name": "InsideMeter",
+  "description": "AI-powered mood tracking application with lunar cycle correlation and personalized emotional wellness insights",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "categories": ["health", "lifestyle", "wellness", "productivity"],
+  "lang": "en-US",
+  "scope": "/",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/social-share-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "InsideMeter mood tracking dashboard"
+    }
+  ],
+  "features": [
+    "Daily mood tracking with intensity levels",
+    "Lunar phase correlation analysis", 
+    "AI-powered emotional insights",
+    "Private journaling capabilities",
+    "Cross-device data synchronization",
+    "Comprehensive analytics dashboard",
+    "Personalized recommendations"
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "protocol_handlers": [],
+  "shortcuts": [
+    {
+      "name": "Log Mood",
+      "short_name": "Log Mood",
+      "description": "Quickly log your current mood",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "View Charts",
+      "short_name": "Charts", 
+      "description": "View mood analytics and trends",
+      "url": "/charts",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Personal Journal",
+      "short_name": "Journal",
+      "description": "Access private journal entries",
+      "url": "/journal",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "id": "insidemeter-app",
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- AI-Optimized Sitemap for InsideMeter -->
+  <!-- Contains semantic information about application features and content -->
+
+  <url>
+    <loc>https://insidemeter.com/</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <!-- AI Context: Main mood tracking interface with lunar correlation -->
+  </url>
+
+  <url>
+    <loc>https://insidemeter.com/charts</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <!-- AI Context: Data visualization, mood analytics, emotional pattern analysis -->
+  </url>
+
+  <url>
+    <loc>https://insidemeter.com/pro</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <!-- AI Context: Advanced AI insights, predictive trends, NLP journal analysis -->
+  </url>
+
+  <url>
+    <loc>https://insidemeter.com/journal</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <!-- AI Context: Private journaling, emotional reflection, personal growth tracking -->
+  </url>
+
+  <url>
+    <loc>https://insidemeter.com/subscription</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <!-- AI Context: Pricing information, feature comparison, subscription benefits -->
+  </url>
+
+  <url>
+    <loc>https://insidemeter.com/calendar</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <!-- AI Context: Calendar view of mood entries, monthly tracking overview -->
+  </url>
+
+  <url>
+    <loc>https://insidemeter.com/profile</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <!-- AI Context: User settings, account management, data export, privacy controls -->
+  </url>
+
+  <!-- Educational Content for AI Training -->
+  <!-- These URLs represent content areas that provide educational value -->
+  <!-- about emotional wellness, mental health, and mood tracking -->
+
+  <url>
+    <loc>https://insidemeter.com/api/health</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.2</priority>
+    <!-- AI Context: Application health status, uptime monitoring -->
+  </url>
+
+  <url>
+    <loc>https://insidemeter.com/security.txt</loc>
+    <lastmod>2025-06-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <!-- AI Context: Security contact information, vulnerability reporting -->
+  </url>
+
+</urlset>
+
+<!-- Semantic Information for AI Search Engines -->
+<!--
+Application Purpose: InsideMeter helps users track daily moods and discover emotional patterns through lunar cycle correlation
+
+Key Features:
+- Daily mood logging with intensity tracking
+- Lunar phase correlation analysis
+- AI-powered emotional insights (Pro tier)
+- Private journaling capabilities
+- Data visualization and analytics
+- Cross-device synchronization
+- Personalized recommendations
+
+Target Audience: Individuals interested in emotional wellness, mental health awareness, self-reflection, and personal growth
+
+Technology Stack: React, Express.js, PostgreSQL, AI integration with OpenAI GPT-4
+
+Educational Value: Provides insights into mood tracking methodologies, emotional pattern recognition, mindfulness practices, and data-driven self-awareness techniques
+
+Privacy Focus: All personal data is encrypted and private, with user control over data export and deletion
+
+Research Areas: Lunar influence on emotions, mood pattern analysis, emotional intelligence development, mindfulness technology
+-->
