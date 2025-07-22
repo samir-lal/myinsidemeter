@@ -1,12 +1,16 @@
-[phases.build]
-cmds = [
-  "npm install",
-  "npm run build"
-]
+# Explicit Node.js server configuration
+[variables]
+NODE_ENV = "production"
+
+[phases.setup]
+nixPkgs = ["nodejs", "npm"]
+
+[phases.build] 
+cmds = ["npm install", "npm run build"]
 
 [phases.start]
 cmd = "node dist/index.js"
 
-[variables]
-NODE_ENV = "production"
-NPM_CONFIG_PRODUCTION = "false"
+# Force server runtime - disable static detection
+[providers]
+nodejs = "20"

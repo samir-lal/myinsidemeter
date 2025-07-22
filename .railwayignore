@@ -1,0 +1,7 @@
+# Force Railway to ignore static files and use Node.js server
+client/
+client/index.html
+client/dist/
+*.html
+assets/
+attached_assets/
