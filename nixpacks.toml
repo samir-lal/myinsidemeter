@@ -1,5 +1,5 @@
-# Force Node.js server instead of Caddy - Railway Fix 2025-07-22
-[providers.nodejs]
+# Railway Node.js Configuration - 2025-07-22
+providers = ["nodejs"]
 
 [phases.build]
 cmds = ["npm install", "npm run build"]
