@@ -7,12 +7,10 @@ cmds = ["npm ci"]
 
 [phases.build]
 cmds = [
+  "npm install",
   "npm run build",
   "mkdir -p server/public",
-  "ls -la dist/public/ || echo 'dist/public not found'",
-  "cp -r dist/public/* server/public/ || echo 'copy failed - continuing anyway'",
-  "ls -la server/public/ || echo 'server/public verified'"
+  "cp -r dist/public/* server/public/"
 ]
 
 [phases.start]
-cmd = "node dist/index.js"
