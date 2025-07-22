@@ -113,6 +113,9 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
+    // Railway production fix: ensure we're in the right directory
+    console.log('🔧 Production mode: Current working directory:', process.cwd());
+    console.log('🔧 Production mode: Looking for static files in: dist/public');
     serveStatic(app);
   }
 
