@@ -1,7 +1,14 @@
-# Force Railway to ignore static files and use Node.js server
+# Ultimate fix: Hide ALL static files from Railway detection
 client/
 client/index.html
 client/dist/
+client/public/
+dist/public/
+public/
 *.html
+index.html
 assets/
 attached_assets/
+package-lock.json
+
+# Force Node.js detection by hiding competing files
