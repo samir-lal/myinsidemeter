@@ -1,11 +1,11 @@
-# Railway deployment: 2025-07-22 15:45 - Enhanced server startup
-[phases.build]
-cmds = ["npm install", "npm run build", "ls -la dist/", "ls -la dist/public/"]
+# Force Node.js server instead of Caddy - Railway Fix 2025-07-22
+[providers.nodejs]
 
-[phases.start]
-cmd = "NODE_ENV=production PORT=$PORT node dist/index.js"
+[phases.build]
+cmds = ["npm install", "npm run build"]
+
+[phases.start] 
+cmd = "NODE_ENV=production node dist/index.js"
 
 [variables]
 NODE_ENV = "production"
-NPM_CONFIG_PRODUCTION = "false"
-PORT = "3000"

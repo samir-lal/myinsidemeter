@@ -138,7 +138,7 @@ app.use((req, res, next) => {
   console.log('🔐 Session secret exists:', !!process.env.SESSION_SECRET);
   
   // Railway provides PORT environment variable, fallback to 5000 for development
-  const port = process.env.PORT || 5000;
+  const port = parseInt(process.env.PORT || '5000', 10);
   server.listen({
     port,
     host: "0.0.0.0",
