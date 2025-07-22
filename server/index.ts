@@ -180,6 +180,17 @@ app.use((req, res, next) => {
     try {
       serveStatic(app);
       console.log('✅ RAILWAY DEBUG: serveStatic() completed successfully');
+      
+      // Universal React SPA fallback route for client-side routing
+      // This must be AFTER serveStatic() and AFTER all API routes
+      const staticPath = path.resolve(import.meta.dirname, "public");
+      app.get("*", (_req, res) => {
+        const indexHtmlPath = path.resolve(staticPath, "index.html");
+        console.log('📄 UNIVERSAL FALLBACK: Serving', indexHtmlPath, 'for route:', _req.path);
+        res.sendFile(indexHtmlPath);
+      });
+      console.log('✅ RAILWAY DEBUG: Universal SPA fallback route added');
+      
     } catch (error) {
       console.error('💥 RAILWAY DEBUG: serveStatic() failed:', error.message);
       console.error('💥 RAILWAY DEBUG: Error stack:', error.stack);
