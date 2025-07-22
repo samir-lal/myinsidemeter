@@ -1,6 +1,6 @@
 {
   "build": {
-    "commands": ["npm install", "npm run build", "mkdir -p server/public && cp -r dist/* server/public/"]
+    "commands": ["npm install", "npm run build", "mkdir -p server/public && cp -r dist/public/* server/public/"]
   },
   "start": {
     "command": "npm start"
