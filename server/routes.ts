@@ -208,6 +208,8 @@ async function isAuthenticated(req: any, res: any, next: any) {
 
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Static file serving handled by server/index.ts serveStatic() function
+
   // Serve support page (early placement to avoid conflicts)
   app.get('/support', (req, res) => {
     try {
@@ -936,10 +938,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         userId = (req as any).userId;
         console.log("✅ iOS auth from global middleware for mood entry, userId:", userId);
       }
-      // Check session-based auth for web users
-      else if ((req as any).session?.userId || (req as any).session?.user) {
-        userId = (req as any).session?.userId || (req as any).session?.user?.id;
-        console.log("✅ Session auth detected for mood entry, userId:", userId);
+      // Check session-based auth for web users (including Passport user)
+      else if ((req as any).session?.userId || (req as any).session?.user || (req as any).user) {
+        userId = (req as any).session?.userId || (req as any).session?.user?.id || (req as any).user?.id;
+        console.log("✅ Session/Passport auth detected for mood entry, userId:", userId);
       }
       
       // If still no userId, check for guest mode
@@ -1000,10 +1002,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         userId = (req as any).userId;
         console.log("✅ iOS auth from global middleware, userId:", userId);
       }
-      // Check session-based auth for web users  
-      else if ((req as any).session?.userId || (req as any).session?.user) {
-        userId = (req as any).session?.userId || (req as any).session?.user?.id;
-        console.log("✅ Session auth detected, userId:", userId);
+      // Check session-based auth for web users (including Passport user)
+      else if ((req as any).session?.userId || (req as any).session?.user || (req as any).user) {
+        userId = (req as any).session?.userId || (req as any).session?.user?.id || (req as any).user?.id;
+        console.log("✅ Session/Passport auth detected, userId:", userId);
       }
       
       // If still no userId, check for guest mode
@@ -5120,6 +5122,17 @@ Policy: https://insidemeter.com/privacy
 
   // Let Vite handle all static file serving (both development and production)
   console.log('🔧 Routes configured - Vite will handle static files and SPA routing');
+
+  // Simple hello world test endpoint for Railway deployment verification
+  app.get('/api/hello-world', (req, res) => {
+    res.json({ 
+      message: 'Hello World from InsideMeter!', 
+      timestamp: new Date().toISOString(),
+      status: 'Railway deployment successful'
+    });
+  });
+
+  // Let Vite handle all static file serving and SPA routing
 
   const httpServer = createServer(app);
   return httpServer;
