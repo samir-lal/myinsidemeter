@@ -1,16 +1,22 @@
-[variables]
-NODE_ENV = "production"
-PORT = "3000"
+# Minimal Railway Configuration - Focus on Getting Express Running
+[phases.setup]
+nixPkgs = ["nodejs-18_x", "npm-8_x"]
 
 [phases.install]
 cmds = ["npm ci"]
 
 [phases.build]
 cmds = [
-  "npm install",
-  "npm run build",
-  "mkdir -p server/public",
-  "cp -r dist/public/* server/public/"
+    "echo 'Starting build process...'",
+    "npm run build",
+    "echo 'Build completed, copying files...'",
+    "mkdir -p server/public",
+    "ls -la dist/ || echo 'No dist directory found'",
+    "cp -r dist/* server/public/ 2>/dev/null || echo 'No files to copy, creating placeholder...'",
+    "echo '<h1>Railway Test - Server Running</h1>' > server/public/index.html",
+    "ls -la server/public/ || echo 'Server public directory check failed'",
+    "echo 'Build phase completed'"
 ]
 
-[phases.start]
+[start]
+cmd = "npm start"
