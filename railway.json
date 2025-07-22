@@ -1,6 +1,6 @@
 {
   "build": {
-    "commands": ["npm install", "npm run build", "bash railway-build.sh"]
+    "commands": ["npm install", "npm run build", "mkdir -p server/public && cp -r dist/* server/public/"]
   },
   "start": {
     "command": "npm start"
