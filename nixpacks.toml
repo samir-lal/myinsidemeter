@@ -1,9 +1,16 @@
-# Simple Node.js configuration for Railway
-[variables]
-NODE_ENV = "production"
+[phases.setup]
+nixPkgs = ["nodejs_20", "openssl"]
+
+[phases.install]
+cmds = ["npm ci"]
 
 [phases.build]
 cmds = ["npm install", "npm run build"]
 
-[phases.start] 
+[phases.start]
 cmd = "node dist/index.js"
+
+[variables]
+NODE_ENV = "production"
+NPM_CONFIG_PRODUCTION = "false"
+PORT = "3000"

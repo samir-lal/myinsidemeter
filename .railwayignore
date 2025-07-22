@@ -1,14 +1,14 @@
-# Ultimate fix: Hide ALL static files from Railway detection
-client/
+# Hide static files that trigger Caddy detection
 client/index.html
-client/dist/
-client/public/
-dist/public/
-public/
+dist/public/index.html
 *.html
-index.html
+public/
+client/public/
 assets/
 attached_assets/
-package-lock.json
-
-# Force Node.js detection by hiding competing files
+temp_*/
+extracted/
+ios/
+railway-fix-upload/
+therapist-portal/
+insidemeter-railway/
