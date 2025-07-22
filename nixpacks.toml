@@ -1,11 +1,12 @@
-# Railway Node.js Configuration - 2025-07-22
-providers = ["nodejs"]
-
 [phases.build]
-cmds = ["npm install", "npm run build"]
+cmds = [
+  "npm install",
+  "npm run build"
+]
 
-[phases.start] 
-cmd = "NODE_ENV=production node dist/index.js"
+[phases.start]
+cmd = "node dist/index.js"
 
 [variables]
 NODE_ENV = "production"
+NPM_CONFIG_PRODUCTION = "false"
