@@ -1,4 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
+import path from 'path';
+import fs from 'fs';
 // Session and authentication configuration handled in auth module
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
@@ -10,6 +12,18 @@ import dns from 'dns';
 dns.setDefaultResultOrder('ipv4first');
 
 const app = express();
+
+// Railway Debug: Check static file location
+const staticPath = path.resolve(import.meta.dirname, 'public');
+console.log('🪵 [Express] Serving static from:', staticPath);
+
+// Check if index.html exists
+const indexPath = path.join(staticPath, 'index.html');
+if (!fs.existsSync(indexPath)) {
+  console.error('❌ [Express] index.html not found at:', indexPath);
+} else {
+  console.log('✅ [Express] index.html exists at:', indexPath);
+}
 
 // CORS configuration for iOS cross-origin requests
 app.use((req, res, next) => {
@@ -150,6 +164,16 @@ app.use((req, res, next) => {
           console.log(`     ❌ Error reading directory: ${e.message}`);
         }
       }
+    }
+    
+    // Additional debug for __dirname equivalent
+    const staticPath = path.resolve(import.meta.dirname, 'public');
+    console.log("🔧 Serving static files from:", staticPath);
+    console.log("🔧 Static path exists:", fs.existsSync(staticPath));
+    
+    if (fs.existsSync(staticPath)) {
+      const staticFiles = fs.readdirSync(staticPath);
+      console.log("🔧 Static files found:", staticFiles.slice(0, 10));
     }
     
     console.log('🔧 RAILWAY DEBUG: Attempting to call serveStatic()...');

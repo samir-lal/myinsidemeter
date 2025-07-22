@@ -1,6 +1,14 @@
 {
   "build": {
-    "commands": ["npm install", "npm run build", "mkdir -p server/public && cp -r dist/public/* server/public/"]
+    "commands": [
+      "npm install", 
+      "npm run build", 
+      "echo '📁 [Debug] Listing dist/public:'",
+      "ls -lh dist/public || echo '❌ dist/public does NOT exist'",
+      "mkdir -p server/public && cp -r dist/public/* server/public/",
+      "echo '📁 [Debug] Listing server/public after copy:'",
+      "ls -lh server/public || echo '❌ server/public does NOT exist'"
+    ]
   },
   "start": {
     "command": "npm start"
