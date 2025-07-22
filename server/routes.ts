@@ -5118,35 +5118,8 @@ Policy: https://insidemeter.com/privacy
     res.download(path.join(process.cwd(), 'APPLE_SUBMISSION_DOCUMENTATION.md'), 'APPLE_SUBMISSION_DOCUMENTATION.md');
   });
 
-  // In development, let Vite handle static files and SPA routing
-  if (process.env.NODE_ENV !== 'production') {
-    console.log('🔧 Development mode: Vite will handle static files and SPA routing');
-  } else {
-    // Production: serve static files from dist
-    const currentDir = path.dirname(new URL(import.meta.url).pathname);
-    const staticPath = path.join(currentDir, '../client/dist');
-    if (fs.existsSync(staticPath)) {
-      app.use(express.static(staticPath));
-      console.log('✅ Static files served from:', staticPath);
-      
-      // SPA fallback for production only
-      app.get('*', (req, res) => {
-        if (req.path.startsWith('/api/')) {
-          return res.status(404).json({ message: 'API endpoint not found' });
-        }
-        
-        const indexPath = path.join(staticPath, 'index.html');
-        res.sendFile(indexPath, (err) => {
-          if (err) {
-            console.error('Error serving index.html:', err);
-            res.status(500).send('Error loading application');
-          }
-        });
-      });
-    } else {
-      console.log('❌ Production build not found');
-    }
-  }
+  // Let Vite handle all static file serving (both development and production)
+  console.log('🔧 Routes configured - Vite will handle static files and SPA routing');
 
   const httpServer = createServer(app);
   return httpServer;
