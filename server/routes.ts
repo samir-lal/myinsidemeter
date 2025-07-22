@@ -21,6 +21,7 @@ import { generateTwoFactorSecret, generateQRCodeDataUrl, verifyTwoFactorToken, r
 import { setupAuth } from "./auth";
 import passport from "passport";
 import { iosAuthMiddleware, optionalIOSAuthMiddleware, generateIOSAuthToken } from "./middleware/iosAuth.js";
+import { fileURLToPath } from 'url';
 
 // Helper functions for 2FA
 async function setupTwoFactor(username: string, issuer: string) {
@@ -234,7 +235,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       console.log('📱 iOS auth success route called with params:', req.query);
       // This will serve the main React app, which will handle the iOS auth success page
-      const distPath = path.resolve(import.meta.dirname, "public");
+      const __filename = fileURLToPath(import.meta.url);
+      const __dirname = path.dirname(__filename);
+      const distPath = path.resolve(__dirname, "public");
       res.sendFile(path.resolve(distPath, "index.html"));
     } catch (error) {
       console.error('❌ iOS auth success route error:', error);

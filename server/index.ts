@@ -13,11 +13,12 @@ dns.setDefaultResultOrder('ipv4first');
 
 const app = express();
 
-// Railway Debug: Check static file location
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+// Railway Debug: Check static file location - ESBuild compatible fix
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const staticPath = path.resolve(__dirname, 'public');
 console.log('🪵 [Express] Serving static from:', staticPath);
-
 
 // Check if index.html exists
 const indexPath = path.join(staticPath, 'index.html');
