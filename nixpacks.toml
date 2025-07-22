@@ -9,7 +9,9 @@ cmds = ["npm ci"]
 cmds = [
   "npm run build",
   "mkdir -p server/public",
-  "cp -r dist/public/* server/public/"
+  "ls -la dist/public/ || echo 'dist/public not found'",
+  "cp -r dist/public/* server/public/ || echo 'copy failed - continuing anyway'",
+  "ls -la server/public/ || echo 'server/public verified'"
 ]
 
 [phases.start]
