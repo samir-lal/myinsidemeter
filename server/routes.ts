@@ -5123,15 +5123,6 @@ Policy: https://insidemeter.com/privacy
   // Let Vite handle all static file serving (both development and production)
   console.log('🔧 Routes configured - Vite will handle static files and SPA routing');
 
-  // Simple hello world test endpoint for Railway deployment verification
-  app.get('/api/hello-world', (req, res) => {
-    res.json({ 
-      message: 'Hello World from InsideMeter!', 
-      timestamp: new Date().toISOString(),
-      status: 'Railway deployment successful'
-    });
-  });
-
   // Let Vite handle all static file serving and SPA routing
 
   const httpServer = createServer(app);
