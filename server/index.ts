@@ -127,75 +127,7 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
-    // Railway production fix: ensure we're in the right directory
-    console.log('🔧 RAILWAY DEBUG: Production mode detected');
-    console.log('🔧 RAILWAY DEBUG: Current working directory:', process.cwd());
-    console.log('🔧 RAILWAY DEBUG: __dirname equivalent:', import.meta.dirname);
-    
-    // Import fs synchronously to check file system
-    const fs = await import('fs');
-    const path = await import('path');
-    
-    // Check all possible locations where built files might be
-    const possiblePaths = [
-      path.resolve(import.meta.dirname, "public"),
-      path.resolve(process.cwd(), "server", "public"), 
-      path.resolve(process.cwd(), "dist"),
-      path.resolve(process.cwd(), "public"),
-      path.resolve(import.meta.dirname, "..", "dist")
-    ];
-    
-    console.log('🔍 RAILWAY DEBUG: Checking all possible build locations:');
-    for (const checkPath of possiblePaths) {
-      const exists = fs.existsSync(checkPath);
-      console.log(`  📂 ${checkPath}: ${exists ? 'EXISTS' : 'NOT FOUND'}`);
-      if (exists) {
-        try {
-          const files = fs.readdirSync(checkPath);
-          console.log(`     📄 Files (${files.length}): ${files.slice(0, 10).join(', ')}${files.length > 10 ? '...' : ''}`);
-          
-          // Check specifically for index.html
-          if (files.includes('index.html')) {
-            const indexPath = path.join(checkPath, 'index.html');
-            const stats = fs.statSync(indexPath);
-            console.log(`     ✅ index.html found - size: ${stats.size} bytes`);
-          }
-        } catch (e) {
-          console.log(`     ❌ Error reading directory: ${e.message}`);
-        }
-      }
-    }
-    
-    // Additional debug for __dirname equivalent
-    const staticPath = path.resolve(import.meta.dirname, 'public');
-    console.log("🔧 Serving static files from:", staticPath);
-    console.log("🔧 Static path exists:", fs.existsSync(staticPath));
-    
-    if (fs.existsSync(staticPath)) {
-      const staticFiles = fs.readdirSync(staticPath);
-      console.log("🔧 Static files found:", staticFiles.slice(0, 10));
-    }
-    
-    console.log('🔧 RAILWAY DEBUG: Attempting to call serveStatic()...');
-    try {
-      serveStatic(app);
-      console.log('✅ RAILWAY DEBUG: serveStatic() completed successfully');
-      
-      // Universal React SPA fallback route for client-side routing
-      // This must be AFTER serveStatic() and AFTER all API routes
-      const staticPath = path.resolve(import.meta.dirname, "public");
-      app.get("*", (_req, res) => {
-        const indexHtmlPath = path.resolve(staticPath, "index.html");
-        console.log('📄 UNIVERSAL FALLBACK: Serving', indexHtmlPath, 'for route:', _req.path);
-        res.sendFile(indexHtmlPath);
-      });
-      console.log('✅ RAILWAY DEBUG: Universal SPA fallback route added');
-      
-    } catch (error) {
-      console.error('💥 RAILWAY DEBUG: serveStatic() failed:', error.message);
-      console.error('💥 RAILWAY DEBUG: Error stack:', error.stack);
-      throw error;
-    }
+    serveStatic(app);
   }
 
   // Enhanced startup logging for Railway debugging

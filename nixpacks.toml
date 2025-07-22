@@ -1,3 +1,4 @@
+# Railway deployment: 2025-07-22 15:30 - Fix 404 routing issue
 [phases.build]
 cmds = ["npm install", "npm run build"]
 
